@@ -1,0 +1,35 @@
+/dts-v1/;
+/plugin/;
+/{
+	compatible = "brcm,bcm2835","bcm,brcm2708","brcm,bcm2709";
+	
+	fragment@0 {
+		target-path = "/";
+		__overlay__ {
+			keypad:breadboard_key {		
+				compatible = "gpio-keys";
+				#address-cells = <1>;
+				#size-cells = <0>;
+				autorepeat;
+				button@17 {
+					label = "breadboard enter";
+					linux,code = <28>; //enter
+					gpios = <&gpio 17 1>;	
+				};
+			};
+		};
+	};
+};
+//dtc -I dts -O dtb -o breadboard.dtbo breadboard.dts
+//sudo cp breadboard.dts /boot/ovelay/
+//add to /boot/config.txt
+//dtoverlay=breadboard
+//test
+//Open a new terminal on rasp desktop and press button on audio hat.
+//The cursor add a new line in terminal as press enter key in keyboard.
+
+
+
+
+
+
