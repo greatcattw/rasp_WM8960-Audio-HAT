@@ -9,7 +9,8 @@ flash sdcard with image 2017-11-29-raspbian-stretch.img
 4.9.59-V7+
 Respberry 3B
 
-==========audio==========
+## audio
+
 
 /boot/config
 
@@ -37,6 +38,14 @@ arecord -l
 
 sudo apt-get install mpg123
 
+## mixer
+![pic](ws_wm8960_rasp_mixer_routing/ws_wm8960_rasp.png)
+![pic](ws_wm8960_rasp_mixer_routing/wm8960_out.png)
+![pic](ws_wm8960_rasp_mixer_routing/wm8960_input_L.png)
+
+
+
+## Button
 ==========button==========
 
 dtc -I dts -O dtb -o breadboard.dtbo breadboard.dts
@@ -44,6 +53,6 @@ sudo cp breadboard.dts /boot/ovelay/
 add to /boot/config.txt
 	dtoverlay=breadboard
 
-##test
+### test
 Open a new terminal on rasp desktop and press button on audio hat.
 The cursor add a new line in terminal as press enter key in keyboard.
