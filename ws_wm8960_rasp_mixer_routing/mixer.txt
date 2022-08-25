@@ -1,0 +1,36 @@
+amixer sset 'DAC Mono Mix' 'Stereo' &&\
+echo "---" &&\
+amixer sset 'Left Output Mixer PCM' on &&\
+amixer sset 'Right Output Mixer PCM' on &&\
+amixer sset 'Left Output Mixer Boost Bypass' off &&\
+amixer sset 'Right Output Mixer Boost Bypass' off &&\
+amixer sset 'Left Output Mixer LINPUT3' off &&\
+amixer sset 'Right Output Mixer RINPUT3' off &&\
+amixer sset 'Headphone' 127,127 &&\
+amixer sset 'Playback' 255,255 &&\
+echo "---" &&\
+amixer sset 'Mono Output Mixer Right' off &&\
+amixer sset 'Mono Output Mixer Left' off &&\
+echo "---" &&\
+amixer sset  'Left Input Boost Mixer LINPUT1' 0 &&\
+amixer sset  'Left Input Boost Mixer LINPUT2' 0 &&\
+amixer sset  'Left Input Boost Mixer LINPUT3' 0 &&\
+amixer sset  'Right Input Boost Mixer RINPUT1' 0 &&\
+amixer sset  'Right Input Boost Mixer RINPUT2' 0 &&\
+amixer sset  'Right Input Boost Mixer RINPUT3' 0 &&\
+amixer sset  'Left Boost Mixer LINPUT1' on &&\
+amixer sset  'Left Boost Mixer LINPUT2' off &&\
+amixer sset  'Left Boost Mixer LINPUT3' off &&\
+amixer sset  'Right Boost Mixer RINPUT1' on &&\
+amixer sset  'Right Boost Mixer RINPUT2' off &&\
+amixer sset  'Right Boost Mixer RINPUT3' off &&\
+amixer sset 'Left Input Mixer Boost' on &&\
+amixer sset 'Right Input Mixer Boost' on &&\
+amixer sset 'Capture' 63,63
+
+sudo alsactl store
+sudo alsactl restore
+
+
+#audio loopback
+arecord -f cd -Dhw:0 | aplay -Dhw:0
