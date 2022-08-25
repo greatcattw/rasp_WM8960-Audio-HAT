@@ -1,3 +1,5 @@
+# waveshare rasp audio hat wm8960
+
 WM8960-Audio-HAT
 
 Test with:
