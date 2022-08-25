@@ -1,5 +1,7 @@
 # waveshare rasp audio hat wm8960
 
+![pic](https://github.com/greatcattw/rpi_WM8960-Audio-HAT/demo.jpg)
+
 WM8960-Audio-HAT
 
 Test with:
